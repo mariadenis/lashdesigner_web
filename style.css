@@ -165,3 +165,98 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 20px;
 }
+
+.precos-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap; /* Importante para IHC em celulares */
+}
+
+.precos-coluna {
+    flex: 1;
+    min-width: 300px;
+    background: var(--blush-bg);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid var(--light-grey);
+}
+
+.precos-coluna h3 {
+    font-family: var(--font-heading);
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.lista-precos {
+    list-style: none;
+}
+
+.lista-precos li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--soft-pink); /* Pontilhado delicado */
+    padding: 10px 0;
+    font-size: 0.95rem;
+}
+
+.lista-precos li strong {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* Container das tabelas */
+.precos-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Garante que quebre linha no celular */
+    margin-top: 40px;
+}
+
+/* Estilo de cada card de preço */
+.precos-coluna {
+    flex: 1;
+    min-width: 320px;
+    max-width: 500px;
+    background: var(--blush-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid var(--light-grey);
+    box-shadow: 0 10px 25px rgba(216, 182, 163, 0.1);
+}
+
+.precos-coluna h3 {
+    font-family: var(--font-heading);
+    color: var(--soft-pink);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--soft-pink);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.lista-precos {
+    list-style: none;
+    text-align: left;
+}
+
+.lista-precos li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed rgba(216, 182, 163, 0.4);
+    font-size: 0.95rem;
+}
+
+.lista-precos li span {
+    color: var(--primary-grey);
+}
+
+.lista-precos li strong {
+    color: var(--soft-pink);
+    font-weight: 600;
+}
