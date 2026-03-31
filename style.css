@@ -260,3 +260,28 @@ footer {
     color: var(--soft-pink);
     font-weight: 600;
 }
+
+.instrucao-agendar {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    color: var(--primary-grey);
+    font-style: italic;
+}
+
+.lista-precos li a {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.lista-precos li a:hover {
+    color: var(--soft-pink);
+    transform: translateX(5px); /* Pequeno movimento para indicar clique */
+}
+
+.lista-precos li a strong {
+    color: var(--soft-pink);
+}
