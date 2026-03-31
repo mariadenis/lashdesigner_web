@@ -1,10 +1,14 @@
-/* Variáveis de cores baseadas na identidade visual enviada */
+/* --- Variáveis e Reset --- */
 :root {
-    --bronze: #a67c52;
-    --dark-bronze: #8a6542;
-    --black: #1a1a1a;
-    --white: #ffffff;
-    --bg-light: #f4f4f4;
+    --primary-color: #1a1a1a; /* Preto da Logo */
+    --secondary-color: #a67c52; /* Bronze sugerido */
+    --accent-color: #ffffff; /* Branco */
+    --text-color: #333333;
+    --bg-light: #f9f9f9; /* Fundo suave */
+    
+    /* Tipografia baseada na identidade visual */
+    --font-heading: 'Playfair Display', serif; /* Elegante */
+    --font-body: 'Montserrat', sans-serif; /* Limpa */
 }
 
 * {
@@ -14,20 +18,22 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--black);
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--accent-color);
     line-height: 1.6;
-    background-color: var(--white);
+    overflow-x: hidden;
 }
 
-/* Header & Navegação */
+/* --- Navegação --- */
 header {
-    background: var(--white);
-    padding: 1rem 5%;
-    position: sticky;
+    background: var(--accent-color);
+    padding: 10px 5%;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 nav {
@@ -36,18 +42,9 @@ nav {
     align-items: center;
 }
 
-.logo {
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-}
-
-.logo span {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    color: var(--bronze);
+.logo-img {
+    height: 60px; /* Ajuste conforme necessário */
+    width: auto;
 }
 
 nav ul {
@@ -57,99 +54,250 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 2rem;
+    margin-left: 30px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--black);
+    color: var(--primary-color);
     font-weight: 400;
-    transition: 0.3s;
+    font-size: 0.95rem;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: var(--bronze);
+nav ul li a:not(.cta-nav):hover {
+    color: var(--secondary-color);
 }
 
-/* Botão de Destaque (CTA) */
-.cta-button {
-    background-color: var(--bronze);
-    color: white !important;
-    padding: 0.8rem 1.5rem;
+.cta-nav {
+    background-color: var(--secondary-color);
+    color: var(--accent-color) !important;
+    padding: 10px 20px;
     border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
 }
 
-.cta-button:hover {
-    background-color: var(--dark-bronze);
+.cta-nav:hover {
+    background-color: var(--primary-color);
+}
+
+/* --- Main Content --- */
+main {
+    margin-top: 80px; /* Espaço para o header fixo */
 }
 
 /* Hero Section */
 .hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('https://images.unsplash.com/photo-1583001931036-64043b23a9d6?auto=format&fit=crop&q=80&w=1440') no-repeat center center/cover;
+    height: 85vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('images/hero-lash.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
-    
-}
-
-/* Efeito de Gradiente Metálico (Bronze/Cobre) */
-.metal-finish {
-    background: linear-gradient(
-        135deg, 
-        #a67c52 0%, 
-        #c6a682 45%, 
-        #8a6542 55%, 
-        #704d2d 100%
-    );
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-    border: 1px solid #704d2d;
+    color: var(--accent-color);
+    padding: 0 10%;
 }
 
 .hero-content h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-/* Seção de Serviços */
-.services {
-    padding: 5rem 10%;
-    text-align: center;
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-weight: 300;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Botões Universais */
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Sobre Section */
+.sobre {
+    padding: 100px 10%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sobre-text h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.sobre-text h3 {
+    color: var(--secondary-color);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.sobre-text p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.sobre-img-container {
+    flex-shrink: 0;
+}
+
+.sobre-img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50%; /* Imagem circular para contraste suave */
+    border: 10px solid var(--bg-light);
+}
+
+/* Serviços Section */
+.servicos {
+    padding: 100px 10%;
     background-color: var(--bg-light);
-}
-
-.services h2 {
-    font-family: 'Cinzel', serif;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    border-bottom: 4px solid var(--bronze);
-    transition: transform 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-}
-
-footer {
-    padding: 2rem;
     text-align: center;
-    background: var(--black);
-    color: white;
-    font-size: 0.9rem;
+}
+
+.servicos h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 60px;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.servico-card {
+    background: var(--accent-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid var(--accent-color);
+}
+
+.servico-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-top: 4px solid var(--secondary-color); /* Efeito bronze ao hover */
+}
+
+.servico-icon {
+    height: 80px;
+    width: auto;
+    margin-bottom: 30px;
+}
+
+.servico-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.servico-card p {
+    color: #666;
+    font-weight: 300;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary-color);
+    color: rgba(255,255,255,0.8);
+    padding: 80px 10% 20px 10%;
+    font-weight: 300;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.logo-footer-img {
+    height: 70px; /* Use uma versão branca da logo aqui */
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+}
+
+.footer-info a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+}
+
+.desenvolvedor {
+    color: rgba(255,255,255,0.5);
+}
+
+/* --- Responsividade (IHC) --- */
+@media (max-width: 992px) {
+    .hero-content h1 { font-size: 3rem; }
+    .sobre { flex-direction: column-reverse; text-align: center; }
+    .sobre-img { width: 300px; height: 300px; }
+}
+
+@media (max-width: 768px) {
+    nav ul { display: none; } /* Simples: ocultar menu em celulares */
+    .hero { height: 70vh; }
+    .hero-btns { flex-direction: column; gap: 10px; }
+    .footer-content { flex-direction: column; text-align: center; gap: 30px; }
 }

@@ -3,53 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MARIA EDUARDA | Lash Designer</title>
+    <title>Joyce Correia | Lash Designer 👁️</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">MARIA EDUARDA <span>Lash Designer</span></div>
+            <div class="logo-container">
+                <img src="logos/joyce-logo-fixed.png" alt="Joyce Correia Lash Designer Logo" class="logo-img">
+            </div>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="https://wa.me/9999999999999" class="cta-button">Agendar Agora</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="https://wa.me/5561999673578" target="_blank" class="cta-nav">Agendar</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Olhar de Impacto, Beleza Natural</h1>
-            <p>Especialista em extensões de cílios personalizadas para realçar sua essência.</p>
-            <a href="#services" class="secondary-button">Conhecer Serviços</a>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>O Olhar que Você Merece.</h1>
+                <p>Especialista em extensões de cílios personalizadas, realçando sua beleza natural com elegância e técnica.</p>
+                <div class="hero-btns">
+                    <a href="#servicos" class="btn-secondary">Nossos Serviços</a>
+                    <a href="https://wa.me/5561999673578" target="_blank" class="btn-primary">Agendar Via WhatsApp</a>
+                </div>
+            </div>
+        </section>
 
-    <section id="services" class="services">
-        <h2>Nossos Serviços</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Fio a Fio</h3>
-                <p>Clássico e natural para o dia a dia.</p>
+        <section id="sobre" class="sobre">
+            <div class="sobre-text">
+                <h2>Joyce Correia</h2>
+                <h3>Lash Designer Certificada</h3>
+                <p>Com anos de experiência na área da beleza, minha paixão é transformar olhares. Cada procedimento é único e realizado com materiais de alta qualidade e técnicas avançadas, focando na saúde dos seus cílios e na sua autoestima.</p>
             </div>
-            <div class="service-card">
-                <h3>Volume Russo</h3>
-                <p>Para quem busca densidade e glamour.</p>
+            <div class="sobre-img-container">
+                <img src="images/foto-joyce.jpg" alt="Joyce Correia aplicando cílios" class="sobre-img">
             </div>
-            <div class="service-card">
-                <h3>Lash Lifting</h3>
-                <p>Curvatura e tratamento para seus próprios cílios.</p>
+        </section>
+
+        <section id="servicos" class="servicos">
+            <h2>Nossos Serviços</h2>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <img src="icons/icon-fioafio.png" alt="Ícone Cílios Fio a Fio" class="servico-icon">
+                    <h4>Fio a Fio Clássico</h4>
+                    <p>Naturalidade e elegância para o dia a dia.</p>
+                </div>
+                <div class="servico-card">
+                    <img src="icons/icon-volume.png" alt="Ícone Volume Russo" class="servico-icon">
+                    <h4>Volume Russo</h4>
+                    <p>Glamour e densidade personalizada.</p>
+                </div>
+                <div class="servico-card">
+                    <img src="icons/icon-lifting.png" alt="Ícone Lash Lifting" class="servico-icon">
+                    <h4>Lash Lifting + Botox</h4>
+                    <p>Curvatura e tratamento para seus cílios naturais.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p>@lashdesigner | (99) 99999-9999</p>
-        <p>&copy; 2026 - Desenvolvido para portfólio de Engenharia de Software.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logos/joyce-logo-white.png" alt="Joyce Correia Logo Branco" class="logo-footer-img">
+            </div>
+            <div class="footer-info">
+                <p>Siga no Instagram: <a href="https://instagram.com/joycecorreia_lash" target="_blank">@joycecorreia_lash</a></p>
+                <p>WhatsApp: (61) 99967-3578</p>
+                <p>Brasília - DF</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Joyce Correia Lash Designer. Todos os direitos reservados.</p>
+            <p class="desenvolvedor">Desenvolvido por Maria Denis - Engenharia de Software UnB.</p>
+        </div>
     </footer>
 
 </body>
