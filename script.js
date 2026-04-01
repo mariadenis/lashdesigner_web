@@ -22,3 +22,16 @@ function confirmBooking() {
     }
     alert(`Sucesso! Seu agendamento de ${selectedService} para o dia ${date} foi solicitado.`);
 }
+
+let carrinho = [];
+
+function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
+    renderizarCarrinho();
+}
+
+function renderizarCarrinho() {
+    const lista = document.getElementById('itens-carrinho');
+    lista.innerHTML = carrinho.map(item => `<li>${item.nome} - R$ ${item.preco}</li>`).join('');
+    // Lógica de soma do total aqui
+}
