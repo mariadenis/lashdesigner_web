@@ -285,3 +285,18 @@ footer {
 .lista-precos li a strong {
     color: var(--soft-pink);
 }
+
+.curso-badge {
+    background-color: var(--cor-primaria); /* Aquele rosinha que definimos */
+    color: white;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#cursos {
+    background-color: #f9f9f9; /* Um fundo levemente diferente para separar as seções */
+    padding: 50px 20px;
+}
