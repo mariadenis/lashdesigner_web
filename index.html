@@ -18,7 +18,6 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#servicos">Serviços</a></li>
-                <li><a href="https://wa.me/5561999673578" target="_blank" class="cta-nav">Agendar</a></li>
             </ul>
         </nav>
     </header>
@@ -36,15 +35,19 @@
         </section>
 
         <section id="sobre" class="sobre">
-            <div class="sobre-text">
-                <h2>Joyce Correia</h2>
-                <h3>Lash Designer & Especialista</h3>
-                <p>Transformar olhares é a minha paixão. Através de técnicas avançadas e materiais de alta qualidade, busco proporcionar elegância e bem-estar para cada cliente.</p>
-            </div>
-            <div class="sobre-img-container">
-                <img src="images/foto-joyce.jpg" alt="Joyce Correia atendendo" class="sobre-img">
-            </div>
-        </section>
+    <div class="sobre-container">
+        <div class="sobre-img-container">
+            <img src="logos/foto-perfil-joyce.jpeg" alt="Joyce Correia - Lash Designer" class="sobre-img">
+        </div>
+
+        <div class="sobre-texto">
+            <h2>Joyce Correia</h2>
+            <h3>Lash Designer</h3>
+            <p>Seja bem-vinda ao meu espaço! Sou apaixonada por realçar a beleza natural de cada mulher através de técnicas avançadas de extensão de cílios.</p>
+            <p>Com 5 anos de experiência e diversas certificações na área, meu compromisso é entregar não apenas um visual impecável, mas também saúde e segurança para os seus fios naturais. Busco a perfeição em cada um, com a delicadeza e o cuidado que você merece.</p>
+        </div>
+    </div>
+</section>
 
         <section id="servicos" class="servicos">
     <h2>Tabela de Serviços e Valores</h2>
@@ -85,6 +88,34 @@
             </ul>
         </div>
     </div>
+    </div> 
+
+  <div class="cta-servicos" style="text-align: center; margin-top: 40px;">
+        
+        <div class="agendamento-box">
+            <p class="horario-titulo">Selecione sua preferência de horário</p>
+            <p style="font-size: 0.8rem; color: #888; margin-bottom: 10px;">*Sujeito à confirmação de disponibilidade</p>
+            
+            <select id="horario-escolhido" class="select-horario">
+                <option value="">Escolha um horário...</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+            </select>
+        </div>
+
+        <button onclick="agendarComHorario()" class="btn-primary" style="display: inline-block; padding: 15px 50px; font-size: 1.1rem; margin-top: 15px;">
+            Solicitar Agendamento ✨
+        </button>
+    </div>
+</section> ```
+
+</section> ```
+
 </section>
     </main>
 

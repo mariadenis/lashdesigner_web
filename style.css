@@ -300,3 +300,104 @@ footer {
     background-color: #f9f9f9; /* Um fundo levemente diferente para separar as seções */
     padding: 50px 20px;
 }
+
+/* Seção Sobre */
+.sobre {
+    padding: 60px 20px;
+    background-color: #fff; /* Fundo branco para contraste */
+}
+
+.sobre-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Alinha verticalmente no centro */
+    gap: 40px; /* Espaço entre imagem e texto */
+}
+
+.sobre-img-container {
+    flex: 1; /* Ocupa 50% do espaço */
+    text-align: center;
+}
+
+.sobre-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Bordas arredondadas (suavidade) */
+    box-shadow: 0 10px 20px rgba(230, 198, 203, 0.3); /* Sombra rosada suave */
+    border: 5px solid #fff; /* Borda branca interna */
+}
+
+.sobre-texto {
+    flex: 1; /* Ocupa 50% do espaço */
+}
+
+.sobre-texto h2 {
+    font-family: 'Playfair Display', serif; /* Fonte elegante */
+    color: var(--cor-primaria); /* Seu rosa escuro */
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.sobre-texto h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #888; /* Cinza suave */
+    font-weight: 300;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.sobre-texto p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+    .sobre-container {
+        flex-direction: column; 
+        text-align: center;
+    }
+}
+
+.horarios-atendimento {
+    margin-bottom: 15px;
+    color: #666; /* Um cinza elegante para não pesar a leitura */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.horario-titulo {
+    color: var(--cor-primaria); /* Usa o rosinha da marca */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.agendamento-box {
+    margin-bottom: 20px;
+}
+
+.select-horario {
+    padding: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    border: 2px solid #f0e6e8;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 250px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.select-horario:focus {
+    border-color: var(--cor-primaria);
+}

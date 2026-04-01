@@ -42,3 +42,25 @@ function adicionarAoCarrinho(nome, preco) {
     carrinho.push({ nome, preco });
     renderizarCarrinho();
 }
+
+function agendarComHorario() {
+    // 1. Captura o valor do select
+    const select = document.getElementById('horario-escolhido');
+    const horario = select.value;
+
+    // 2. Validação: A cliente escolheu um horário?
+    if (horario === "") {
+        alert("Por favor, selecione uma preferência de horário antes de agendar! ✨");
+        select.focus(); // Coloca o cursor no select para ajudar a cliente
+        return;
+    }
+
+    // 3. Monta a mensagem personalizada
+    const mensagem = `Olá Joyce! Gostaria de agendar um serviço.\nMinha preferência de horário é às *${horario}*.\nPodemos confirmar a disponibilidade?`;
+
+    // 4. Redireciona para o WhatsApp
+    const telefone = "5561999673578";
+    const urlWhatsapp = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+    
+    window.open(urlWhatsapp, '_blank');
+}
