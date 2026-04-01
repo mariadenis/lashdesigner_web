@@ -1,37 +1,41 @@
-let selectedService = "";
-
-// Função para selecionar o serviço
-function selectService(name, price) {
-    selectedService = name;
-    alert(`Você selecionou: ${name} (R$ ${price})`);
-    document.getElementById('calendar-container').classList.remove('hidden');
-}
-
-// Lógica do botão principal
-document.getElementById('btn-agendar').addEventListener('click', () => {
-    const container = document.getElementById('calendar-container');
-    container.classList.toggle('hidden');
-});
-
-// Confirmação final
-function confirmBooking() {
-    const date = document.getElementById('date-picker').value;
-    if (!date) {
-        alert("Por favor, selecione uma data.");
-        return;
-    }
-    alert(`Sucesso! Seu agendamento de ${selectedService} para o dia ${date} foi solicitado.`);
-}
-
 let carrinho = [];
 
+// 2. FUNÇÕES DE APOIO
+function renderizarCarrinho() {
+    const lista = document.getElementById('itens-carrinho');
+    const totalElemento = document.getElementById('total-valor');
+    
+    if(!lista || !totalElemento) return; // Segurança caso os IDs não existam
+
+    lista.innerHTML = '';
+    let total = 0;
+    
+    carrinho.forEach((item, index) => {
+        total += item.preco;
+        lista.innerHTML += `<li>${item.nome} - R$ ${item.preco.toFixed(2)}</li>`;
+    });
+    
+    totalElemento.innerText = `R$ ${total.toFixed(2)}`;
+}
+
+// 3. FUNÇÃO DE COMPRA (ISSUE #7)
+function finalizarCompra() {
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    let mensagem = "Olá Joyce! Gostaria de agendar:\n\n";
+    carrinho.forEach(item => {
+        mensagem += `- ${item.nome}: R$ ${item.preco.toFixed(2)}\n`;
+    });
+
+    const url = `https://wa.me/5561999673578?text=${encodeURIComponent(mensagem)}`;
+    window.location.href = url;
+}
+
+// 4. FUNÇÃO DE ADICIONAR
 function adicionarAoCarrinho(nome, preco) {
     carrinho.push({ nome, preco });
     renderizarCarrinho();
-}
-
-function renderizarCarrinho() {
-    const lista = document.getElementById('itens-carrinho');
-    lista.innerHTML = carrinho.map(item => `<li>${item.nome} - R$ ${item.preco}</li>`).join('');
-    // Lógica de soma do total aqui
 }
