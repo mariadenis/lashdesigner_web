@@ -44,21 +44,71 @@ function adicionarAoCarrinho(nome, preco) {
 }
 
 function agendarComHorario() {
-    // 1. Captura o valor do select
-    const select = document.getElementById('horario-escolhido');
-    const horario = select.value;
+    // 1. Captura as escolhas da cliente
+    const selectServico = document.getElementById('servico-escolhido');
+    const servico = selectServico.value;
 
-    // 2. Validação: A cliente escolheu um horário?
-    if (horario === "") {
-        alert("Por favor, selecione uma preferência de horário antes de agendar! ✨");
-        select.focus(); // Coloca o cursor no select para ajudar a cliente
+    const selectHorario = document.getElementById('horario-escolhido');
+    const horario = selectHorario.value;
+
+    // 2. Validação Dupla (Garante que ela preencheu tudo)
+    if (servico === "") {
+        alert("Por favor, selecione qual serviço você deseja primeiro! ✨");
+        selectServico.focus();
         return;
     }
 
-    // 3. Monta a mensagem personalizada
-    const mensagem = `Olá Joyce! Gostaria de agendar um serviço.\nMinha preferência de horário é às *${horario}*.\nPodemos confirmar a disponibilidade?`;
+    if (horario === "") {
+        alert("Por favor, selecione uma preferência de horário! ✨");
+        selectHorario.focus();
+        return;
+    }
+
+    // 3. Monta a mensagem personalizada super profissional
+    const mensagem = `Olá Joyce! Gostaria de agendar um(a) *${servico}*.\nMinha preferência de horário é às *${horario}*.\nPodemos confirmar a disponibilidade?`;
 
     // 4. Redireciona para o WhatsApp
+    const telefone = "5561999673578"; // Mantive o número de Brasília que estávamos usando
+    const urlWhatsapp = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+    
+    window.open(urlWhatsapp, '_blank');
+}
+
+// Função para quando a cliente clica no preço do serviço
+function prepararAgendamento(nomeDoServico) {
+    // 1. Pega o select de serviços lá embaixo e muda para o serviço clicado
+    const selectServico = document.getElementById('servico-escolhido');
+    selectServico.value = nomeDoServico;
+
+    // 2. Encontra a área de agendamento
+    const areaAgendamento = document.getElementById('area-agendamento');
+
+    // 3. Rola a página suavemente até lá
+    areaAgendamento.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // 4. Dá um foco visual no select de horários
+    setTimeout(() => {
+        document.getElementById('horario-escolhido').focus();
+    }, 800); 
+}
+
+// Função para o botão final do WhatsApp
+function agendarComHorario() {
+    const servico = document.getElementById('servico-escolhido').value;
+    const horario = document.getElementById('horario-escolhido').value;
+
+    if (servico === "") {
+        alert("Por favor, confirme qual serviço você deseja na caixinha! ✨");
+        return;
+    }
+
+    if (horario === "") {
+        alert("Por favor, escolha uma preferência de horário! ✨");
+        return;
+    }
+
+    const mensagem = `Olá Joyce! Gostaria de agendar um(a) *${servico}*.\nMinha preferência de horário é às *${horario}*.\nPodemos confirmar a disponibilidade?`;
+    
     const telefone = "5561999673578";
     const urlWhatsapp = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
     
